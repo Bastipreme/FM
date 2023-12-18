@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Model quotesql="1" tablecharset="" mysql_version="504" mssql_version="2005" derby_version="106" ingres_version="9">
+  <Entity name="User" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="ID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="FoodBusinessID">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>de.hhn.se.pmt.foodmood.model.FoodBusiness.ID</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="LocationID">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>de.hhn.se.pmt.foodmood.model.Location.ID</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Name">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Password">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="PhoneNumber">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Address">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Discriminator">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Reminder" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="ID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="UserID">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>de.hhn.se.pmt.foodmood.model.User.ID</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="HourOfReminder">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>17</Type>
+      <Length>0</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Validated">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>1</Type>
+      <Length>1</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Occurrence">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Dish" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="ID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="UserID">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>de.hhn.se.pmt.foodmood.model.User.ID</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Title">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Description">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>700</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Recipe">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>700</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Rate" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="ID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Rating">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>4</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Comment">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Recipe" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="ID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="DishID">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>de.hhn.se.pmt.foodmood.model.Dish.ID</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Content">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>700</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Location" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="ID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Plz">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="City">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Latitude">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>6</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Longtitude">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>6</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="FoodBusiness" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="ID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="LocationID">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>de.hhn.se.pmt.foodmood.model.Location.ID</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="BusinessName">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="User_Dish2" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="UserID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>de.hhn.se.pmt.foodmood.model.User.ID</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="DishID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>de.hhn.se.pmt.foodmood.model.Dish.ID</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="User_Dish3" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="UserID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>de.hhn.se.pmt.foodmood.model.User.ID</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="DishID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>de.hhn.se.pmt.foodmood.model.Dish.ID</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Dish2" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="ID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="UserID">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Title">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Description">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Recipe">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Dish22" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="ID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="UserID">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Title">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Description">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>500</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Recipe">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>500</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="FoodBusiness2" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="ID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="LocationID">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="BusinessName">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="BusinessOwner_Dish" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="UserID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="DishID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>de.hhn.se.pmt.foodmood.model.Dish22.ID</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Administrator_Dish" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="UserID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="DishID">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>de.hhn.se.pmt.foodmood.model.Dish22.ID</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <ForeignKey name="sets">
+    <ReferenceTable>Reminder</ReferenceTable>
+    <ReferencedTable>User</ReferencedTable>
+    <Columns>
+      <Column>UserID</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ID</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="describes">
+    <ReferenceTable>Recipe</ReferenceTable>
+    <ReferencedTable>Dish</ReferencedTable>
+    <Columns>
+      <Column>DishID</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ID</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="proposes">
+    <ReferenceTable>User_Dish2</ReferenceTable>
+    <ReferencedTable>User</ReferencedTable>
+    <Columns>
+      <Column>UserID</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ID</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="proposes2">
+    <ReferenceTable>User_Dish2</ReferenceTable>
+    <ReferencedTable>Dish</ReferencedTable>
+    <Columns>
+      <Column>DishID</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ID</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="selects">
+    <ReferenceTable>Dish</ReferenceTable>
+    <ReferencedTable>User</ReferencedTable>
+    <Columns>
+      <Column>UserID</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ID</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="manages">
+    <ReferenceTable>User_Dish3</ReferenceTable>
+    <ReferencedTable>User</ReferencedTable>
+    <Columns>
+      <Column>UserID</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ID</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="manages2">
+    <ReferenceTable>User_Dish3</ReferenceTable>
+    <ReferencedTable>Dish</ReferencedTable>
+    <Columns>
+      <Column>DishID</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ID</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="localizes">
+    <ReferenceTable>FoodBusiness</ReferenceTable>
+    <ReferencedTable>Location</ReferencedTable>
+    <Columns>
+      <Column>LocationID</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ID</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="localizes2">
+    <ReferenceTable>User</ReferenceTable>
+    <ReferencedTable>Location</ReferencedTable>
+    <Columns>
+      <Column>LocationID</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ID</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="owns">
+    <ReferenceTable>User</ReferenceTable>
+    <ReferencedTable>FoodBusiness</ReferencedTable>
+    <Columns>
+      <Column>FoodBusinessID</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ID</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="proposes3">
+    <ReferenceTable>BusinessOwner_Dish</ReferenceTable>
+    <ReferencedTable>Dish22</ReferencedTable>
+    <Columns>
+      <Column>DishID</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ID</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="manages3">
+    <ReferenceTable>Administrator_Dish</ReferenceTable>
+    <ReferencedTable>Dish22</ReferencedTable>
+    <Columns>
+      <Column>DishID</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ID</Column>
+    </RefColumns>
+  </ForeignKey>
+</Model>
