@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="688.0" style="-fx-background-color: #d0a38b;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hhn.se.foodmood.view.fm.CreateController">
+   <children>
+      <TextField layoutX="81.0" layoutY="123.0" prefHeight="32.0" prefWidth="180.0" promptText="Business name" />
+      <Label layoutX="210.0" layoutY="32.0" style="-fx-background-color: #d0a38b;" text="Creating a business">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="261.0" layoutY="281.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="144.0" style="-fx-background-color: #abc991;" text="Finish" />
+      <TextField layoutX="405.0" layoutY="123.0" prefHeight="32.0" prefWidth="180.0" promptText="Location" />
+      <TextField layoutX="405.0" layoutY="166.0" prefHeight="32.0" prefWidth="180.0" promptText="PLZ" />
+   </children>
+</AnchorPane>
