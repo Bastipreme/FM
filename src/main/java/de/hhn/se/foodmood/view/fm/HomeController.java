@@ -3,10 +3,16 @@ package de.hhn.se.foodmood.view.fm;
   import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
   import javafx.fxml.FXMLLoader;
+  import javafx.scene.Node;
+  import javafx.scene.Parent;
+  import javafx.scene.Scene;
   import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+  import javafx.stage.Stage;
 
-  public class HomeController {
+  import java.io.IOException;
+
+public class HomeController {
 
     @FXML
     private Button createButton;
@@ -16,8 +22,16 @@ import javafx.scene.image.ImageView;
 
     @FXML
     void createButton(ActionEvent event) {
-      FXMLLoader loader = new FXMLLoader(getClass().getResource("create.fxml"));
-
+      try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("create.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
 
   }
