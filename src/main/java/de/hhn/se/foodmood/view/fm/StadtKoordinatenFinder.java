@@ -1,3 +1,4 @@
+
 package de.hhn.se.foodmood.view.fm;
 
 import com.google.maps.GeocodingApi;
@@ -7,7 +8,11 @@ import com.google.maps.GeoApiContext;
 public class StadtKoordinatenFinder {
     public Koordinaten findeKoordinaten(String stadt, String plz) {
         try {
-            GeocodingResult[] results = GeocodingApi.newRequest(GoogleMapsApiClient.getInstance())
+            GeoApiContext context = new GeoApiContext.Builder()
+                    .apiKey("AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY")
+                    .build();
+
+            GeocodingResult[] results = GeocodingApi.newRequest(context)
                     .address(stadt + ", " + plz)
                     .await();
 
@@ -23,22 +28,7 @@ public class StadtKoordinatenFinder {
             return null;
         }
     }
-    public class GoogleMapsApiClient {
-        private static GeoApiContext instance;
-
-        private GoogleMapsApiClient() {}
-
-        public static GeoApiContext getInstance() {
-            if (instance == null) {
-                instance = new GeoApiContext.Builder()
-                        .apiKey("YOUR_API_KEY")
-                        .build();
-            }
-            return instance;
-        }
-    }
 }
-
 class Koordinaten {
     double latitude;
     double longitude;
