@@ -10,7 +10,7 @@ import java.io.IOException;
 public class MainPMT extends Application {
   @Override
   public void start(Stage stage) throws IOException {
-    FXMLLoader fxmlLoader = new FXMLLoader(MainPMT.class.getResource("hello-view.fxml"));
+    FXMLLoader fxmlLoader = new FXMLLoader(MainPMT.class.getResource("home.fxml"));
     Scene scene = new Scene(fxmlLoader.load(), 688, 459);
     stage.setTitle("PMT");
     stage.setScene(scene);
