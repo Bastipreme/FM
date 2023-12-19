@@ -1,4 +1,4 @@
-package de.hhn.se.pmt.foodmood.view.foodmood;
+package de.hhn.se.foodmood.view.fm;
 
 import de.hhn.se.pmt.foodmood.model.FoodBusiness;
 import de.hhn.se.pmt.foodmood.model.FoodBusinessDAO;
@@ -12,22 +12,20 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import org.orm.PersistentException;
 
 public class CreateController {
   @FXML
-  private TextField textFieldBusinessName;
+  public TextField textFieldBusinessName;
 
   @FXML
-  private Button buttonFinish;
+  public Button buttonFinish;
 
   @FXML
-  private TextField textFieldLocation;
+  public TextField textFieldLocation;
 
   @FXML
-  private TextField textFieldPLZ;
-
+  public TextField textFieldPLZ;
 
   @FXML
   public void buttonFinish(ActionEvent event) throws PersistentException, IOException {
@@ -35,11 +33,21 @@ public class CreateController {
     String locationName = textFieldLocation.getText();
     int plz = Integer.parseInt(textFieldPLZ.getText());
 
+    LocationPLZ locationPLZ = new LocationPLZ();
+
     Location location = LocationDAO.createLocation();
     location.setCity(locationName);
     location.setPlz(plz);
-    LocationDAO.save(location);
 
+    for (int i = 0; i < locationPLZ.getLocations().length; i++) {
+      if (locationPLZ.getLocations()[i].equals(locationName) && locationPLZ.getPostcodes()[i] == plz) {
+        location.setLongtitude(locationPLZ.getLongitude()[i]);
+        location.setLatitude(locationPLZ.getLatitude()[i]);
+        break;
+      }
+    }
+
+    LocationDAO.save(location);
 
     FoodBusiness foodBusiness = FoodBusinessDAO.createFoodBusiness();
     foodBusiness.setBusinessName(businessName);
@@ -49,6 +57,8 @@ public class CreateController {
     System.out.println("Business Name: " + businessName);
     System.out.println("Location: " + locationName);
     System.out.println("PLZ: " + plz);
+    System.out.println("Longitude: " + location.getLongtitude());
+    System.out.println("Latitude: " + location.getLatitude());
 
     textFieldBusinessName.clear();
     textFieldLocation.clear();

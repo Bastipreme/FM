@@ -1,4 +1,4 @@
-package de.hhn.se.pmt.foodmood.view.foodmood;
+package de.hhn.se.foodmood.view.fm;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
