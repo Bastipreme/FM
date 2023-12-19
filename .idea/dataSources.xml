@@ -14,5 +14,32 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="classes:ormmapping:FoodMood.cfg.xml/Hibernate" uuid="f3553865-d46d-4ceb-a475-f1f3afbf3e51">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/Users/bastipreme/Documents/3 Semester/FM/srcdb/classes/ormmapping/FoodMood.cfg.xml</remarks>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://seserver22.se.hs-heilbronn.de:3306/labswp24foodmood</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.host.port" />
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
+        <property name="com.intellij.clouds.kubernetes.db.container.port" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="ormmapping:FoodMood.cfg.xml/Hibernate" uuid="128d8a58-fd05-4597-b562-0167b6c73ded">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/Users/bastipreme/Documents/3 Semester/FM/srcdb/src/ormmapping/FoodMood.cfg.xml</remarks>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://seserver22.se.hs-heilbronn.de:3306/labswp24foodmood</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

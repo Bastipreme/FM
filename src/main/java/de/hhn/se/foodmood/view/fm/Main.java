@@ -1,4 +1,4 @@
-package de.hhn.se.foodmood.view.fm;
+package de.hhn.se.pmt.foodmood.view.foodmood;
 
 public class Main {
   public static void main(String[] args) {

@@ -1,9 +1,11 @@
-package de.hhn.se.foodmood.view.fm;
+package de.hhn.se.pmt.foodmood.view.foodmood;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 import java.io.IOException;
 
@@ -16,7 +18,6 @@ public class MainPMT extends Application {
     stage.setScene(scene);
     stage.show();
   }
-
   public static void main(String[] args) {
     launch();
   }
