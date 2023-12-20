@@ -13,7 +13,7 @@ public class LocationPLZ {
     public String[] locations = {"Heilbronn", "Stuttgart", "Mannheim", "Karlsruhe", "Heidelberg", "Ludwigsburg",
             "Untereisesheim", "Neckarsulm", "Bad Friedrichshall", "Bad Wimpfen", "Bad Rappenau",
             "Madrid", "Mailand", "Paris", "London", "Berlin", "Hamburg", "München", "Köln", "Frankfurt",
-            "Los Angeles", "Las Vegas", "New York", "Miami", "Sontheim", "Böckingen", "Neckargartach, Obersulm, Vaasa"};
+            "Los Angeles", "Las Vegas", "New York", "Miami", "Sontheim", "Böckingen", "Neckargartach", "Obersulm", "Vaasa"};
     public int[] postcodes = {74081, 70173, 68159, 76131, 69115, 71638, 74257, 74172, 74177, 74206, 74906,
             28001, 20019, 75001, 10001, 10115, 20095, 80331, 50667, 60311,
             90001, 89101, 10001, 33109, 74080, 74078, 74078, 74182, 65100};
